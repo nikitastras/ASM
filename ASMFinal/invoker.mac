@@ -1,0 +1,21 @@
+%macro syscall 1-6
+	%if %0 > 0
+		mov rax, %1
+	%endif
+	%if %0 > 1
+		mov rdi, %2
+	%endif
+	%if %0 > 2
+		mov rsi, %3
+	%endif
+	%if %0 > 3
+		mov rdx, %4
+	%endif
+	%if %0 > 4
+		mov r10, %5
+	%endif
+	%if %0 > 5
+		mov r8, %6
+	%endif
+	syscall
+%endmacro
